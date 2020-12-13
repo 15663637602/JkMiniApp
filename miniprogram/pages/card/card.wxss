@@ -1,0 +1,123 @@
+
+
+page {
+  height: 100%;
+  overflow: hidden;
+}
+
+.card {
+  position: absolute;
+  margin-top: 20rpx;
+  width: 600rpx;
+  height: 1050rpx;
+  box-sizing: border-box;
+  /* background-color: white; */
+  text-align: center;
+  box-shadow: 4px 4px 8px rgb(121, 107, 107);
+  border-radius: 10rpx;
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+}
+
+.slide {
+  position: fixed;
+  width: 80rpx;
+  height: 80rpx;
+  left: 350rpx;
+  bottom: 80rpx;
+}
+
+.img-font {
+  position: fixed;
+  left: 80rpx;
+  top: 400rpx;
+  height: 350rpx;
+  width: 600rpx;
+}
+
+
+
+.school-sign-img {
+  width: 280rpx;
+  height: 440rpx;
+  position: absolute;
+  left: 320rpx;
+  top: 360rpx;
+}
+
+.allLikeView {
+  width: 100rpx;
+  height: 100rpx;
+  box-sizing: border-box;
+  background-color: white;
+  padding: 30rpx;
+  box-shadow: 0px 2px 8px #aaa;
+  border-radius: 50rpx;
+  margin: 800rpx;
+}
+
+.allLikeView .all-like-img {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.card-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+  opacity: 0;
+} 
+
+.animationSlow {
+  /* 动画区 */
+  margin-top: -5555rpx; /* 高度的-1/2 或 者高一点 */
+  width: 10000rpx; /* 彩色背景大小 可自定义 */
+  height: 10000rpx; /* 彩色背景大小 可自定义 */
+  animation-name: myfirst;
+  animation-duration: 2000s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: myfirst;
+  -webkit-animation-duration: 8000ms; /* 速度 */
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  position: fixed;
+  z-index: 1;
+}
+
+.v {
+  background-color: rgb(255, 255, 255);
+  margin: 0px auto auto;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes myfirst {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes myfirst {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

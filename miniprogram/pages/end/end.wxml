@@ -1,0 +1,4 @@
+<view class="end-container">
+<image class="bg" src="/img/chuzihang-boy.jpg" mode="aspectFill" animation="{{animationData}}"></image>
+<view class="signature" animation="{{animationData2}}"><image src="/img/end-font.png"></image></view>
+</view>

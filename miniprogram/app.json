@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/cloud/cloud",
+    "pages/cake/cake",
+    "pages/index/index",
+    "pages/card/card",
+    "pages/end/end"
+  ],
+  "window": {
+    "comment" : {"navigationStyle : custom" : "去除navigationBar"},
+    "navigationStyle": "custom",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f00",
+    "navigationBarTitleText": "YQ MiniApp",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}
