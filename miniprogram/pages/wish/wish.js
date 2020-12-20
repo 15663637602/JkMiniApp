@@ -4,15 +4,22 @@ Page({
    * 页面的初始数据
    */
   data: {
+    wishPageXmas: "cloud://yq-mini-app-env-5grnxcah9f3142ba.7971-yq-mini-app-env-5grnxcah9f3142ba-1302525386/wallpaper/XmasTree2.jpg",
+    wishText: "cloud://yq-mini-app-env-5grnxcah9f3142ba.7971-yq-mini-app-env-5grnxcah9f3142ba-1302525386/text/CollectWishToBeTrue-Light.png",
     count: 0,
     system:'',
     animation: '',
     showAnima: [],
     stepText:45
   },
+  
+  imageOnLoad:function(event) {
+    wx.hideLoading();
+  },
+
   onReady: function(option) {
-    var that = this
-    that.data.stepText = 45
+    var that = this;
+    that.data.stepText = 45;
     var step = that.data.stepText;
     clearInterval(valHandle);
     valHandle = setInterval(function(){
@@ -29,7 +36,7 @@ Page({
       var pages = getCurrentPages();
       var cPage = pages[pages.length - 1];
       var url = cPage.route;
-      if (url == 'pages/index/index') {
+      if (url == 'pages/wish/wish') {
         wx.redirectTo({
           url: '/pages/card/card'
         })
@@ -40,6 +47,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: 'Loading Picture...',
+    });
     this.setData({
       currCount: this.data.count,
       system:wx.getSystemInfoSync()
@@ -73,7 +83,7 @@ Page({
     for (let i = 0; i < 9; i++) {
       var obj = {
         num: Math.floor(Math.random() * 15 + 1) + 'C',
-        title: i == 0 ? '暴富' : i == 1 ? '懂我的白马王子' : i == 2 ? '永不长痘' : i == 3 ? '永远是美少女' : i == 4 ? '狂吃不胖' : i == 5 ? '家人健康' : i == 6 ? '有自己的窝' : i == 7 ? '肖战进军好莱坞' : '龙族V',
+        title: i == 0 ? '想要的都能实现' : i == 1 ? '白马王子' : i == 2 ? '永不长痘' : i == 3 ? '永远是小仙女' : i == 4 ? '狂吃不胖' : i == 5 ? '家人健康' : i == 6 ? '满意的工作' : i == 7 ? '吹海风' : '病毒退散',
         anima: '',
         styleObject: '',
         isShow: true,

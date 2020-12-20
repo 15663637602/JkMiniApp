@@ -1,4 +1,4 @@
 <view class="end-container">
-<image class="bg" src="/img/chuzihang-boy.jpg" mode="aspectFill" animation="{{animationData}}"></image>
-<view class="signature" animation="{{animationData2}}"><image src="/img/end-font.png"></image></view>
+<image class="bg" src="{{endPageXmas}}" mode="aspectFill" animation="{{animationData}}"></image>
+<image class="bg2" src="{{endPageMerryXmas}}" bindload="imageOnLoad" mode="aspectFill" animation="{{animationData2}}"></image>
 </view>

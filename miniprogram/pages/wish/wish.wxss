@@ -1,0 +1,178 @@
+/**index.wxss**/
+
+page {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgb(34,193,195), 	rgba(236,202,129,0.7)); /* 标准语法 */
+}
+
+.foot_icon {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.view_content {
+  padding: 0 30rpx;
+  padding-top: 20rpx;
+  position: relative;
+  z-index: 2;
+}
+
+.view_content>.content_top:first-child {
+  margin-bottom: 10rpx;
+}
+
+.content_top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top_left, .top_right {
+  display: flex;
+  align-items: center;
+}
+
+.view_whatenergy {
+  color: #fff;
+  font-size: 30rpx;
+  font-family: 'wangte';
+  letter-spacing: 4rpx;
+  display: flex;
+}
+
+.view_whatenergy .text_C {
+  margin-top: -3rpx;
+}
+
+.text_C {
+  font-size: 34rpx;
+  display: block;
+}
+
+.img_whatenergy {
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 7rpx;
+}
+
+.img_getenergy {
+  width: 178rpx;
+  height: 78rpx;
+}
+
+/* 能量 */
+
+.view_energy {
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+  /* overflow: hidden; *//* border: 1px solid #4CD964; */
+}
+
+.view_energy_list {
+  position: relative;
+  height: 130rpx;
+  width: 116rpx;
+  text-align: center;
+  /* border: 1px solid #FEFFFF; */
+}
+
+@keyframes heart {
+  from {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translate(0, 6px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes lines {
+  from {
+    transform: translate(0px, 0);
+  }
+
+  to {
+    transform: translate(3px, 0);
+  }
+}
+
+.energy_title {
+  font-size: 23rpx;
+  line-height: 110rpx;
+  letter-spacing: 2rpx;
+  color: white;
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  text-align: center;
+  font-family: 'wangte';
+  background-image: '/img/bubble.png';
+  background-size: 100% 100%;
+  /* margin: 0 15rpx; */
+}
+
+.energy_tips {
+  margin-top: -10rpx;
+  font-size: 30rpx;
+  font-style: normal;
+  color: black;
+}
+
+.view_collect {
+  text-align: center;
+}
+
+.img_collect {
+  width: 260rpx;
+  height: 113rpx;
+  /* background: white;
+  border-radius: 10%; */
+  
+}
+
+@keyframes mycollect {
+  from {
+    transform: translate(-6px, 0);
+  }
+
+  to {
+    transform: translate(6px, 0);
+  }
+}
+
+.background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.wish-font {
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 100rpx;
+  width: 670rpx;
+  z-index: -1;
+}
+
+.stepText {
+  font-weight: bold;
+  font-size: 60rpx;
+  color: #fbaf5a;
+  position: fixed;
+  bottom: 10rpx;
+  right: 5rpx;
+}

@@ -1,8 +1,7 @@
 {
   "pages": [
-    "pages/cloud/cloud",
-    "pages/cake/cake",
-    "pages/index/index",
+    "pages/home/home",
+    "pages/wish/wish",
     "pages/card/card",
     "pages/end/end"
   ],

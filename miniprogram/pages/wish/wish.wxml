@@ -1,7 +1,6 @@
 <!--index.wxml-->
-<!-- 能量球 -->
-<!-- <view  class="background"> -->
 <view animation="{{showAnima}}" class="view_energy">
+	<image class='backgroundImg' src="{{wishPageXmas}}" bindload="imageOnLoad"></image>
 	<block wx:for="{{myList}}" wx:for-index="idx" wx:for-item="itm" wx:key='idx'>
 
 		<block wx:if="{{itm.realItem}}">
@@ -22,7 +21,6 @@
 	<view class="view_collect">
 		<view id="my_collect" class="img_collect"></view>
 	</view>
-	<image src="/img/wish-font.png" class="wish-font"></image>
+	<image src="{{wishText}}" class="wish-font"></image>
 	<view class='stepText'>{{stepText}}</view>
 </view>
-<!-- </view> -->

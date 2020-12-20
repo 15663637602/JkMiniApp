@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view animation="{{showAnima}}" class="home-container">
+	<image class='backgroundImg' src="{{homePageXmas}}" mode="aspectFill"></image>
+	<image src="{{icon48MusicRed}}" animation="{{animation}}" mode="aspectFill" style="width: 80rpx; height: 80rpx" class="icon"></image>
+	<canvas style="width: 100%; height:{{canvasHeight}}px" canvas-id="myCanvas">
+	</canvas>
+	<view class="my-word" bindtap="toWish">
+		<div><image class="img-font" src="{{unpackCardText}}"></image></div>
+		<div><image class="img-point" src="{{iconPointGesture}}"></image></div>
+	</view>
+</view>

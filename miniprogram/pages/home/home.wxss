@@ -1,0 +1,44 @@
+.home-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  opacity: 0;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+}
+
+.my-word {
+  position: absolute;
+  bottom: 70%;
+}
+
+.my-word div {
+  display: block;
+  text-align: center;
+  justify-content: center;
+}
+
+.icon {
+  position: absolute;
+  bottom: 15rpx;
+  right: 15rpx;
+}
+
+.img-point {
+  /* position: absolute; */
+  bottom: 30rpx;
+  right: 30rpx;
+  width: 80rpx;
+  height: 80rpx;
+  /* z-index: 1; */
+}
+
+.img-font {
+  /* position: fixed; */
+  width: 750rpx;
+  height: 150rpx;
+  /* z-index: 1; */
+}

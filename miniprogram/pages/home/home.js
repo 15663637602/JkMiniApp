@@ -1,4 +1,9 @@
-//index.js
+//cake.js
+// init DB
+wx.cloud.init();
+const db = wx.cloud.database();
+//
+const NOT_FOUND = 404;
 //获取应用实例
 const app = getApp()
 
@@ -21,21 +26,34 @@ const snowImage = '/img/white-snowflake.png';
 
 Page({
   data: {
+    // img
+    // iconImgs
+    icon48MusicRed: "",
+    iconPointGesture: "",
+    whiteSnowflake: "",
+    // textImgs
+    unpackCardText: "",
+    // picImgs
+    homePageXmas: "",
+
     canvasHeight: 0,
     animation: {},
     showAnima: [],
   },
+
   //事件处理函数
   // bindViewTap: function() {
   // },
   onLoad: function () {
+    wx.showLoading({
+      title: 'Loading BGM...',
+    });
+    var homeObj = this;
+    initImgData();
   
     let tickCount = 150;
     let ticker = 0;
-    // let lastTime = Date.now();
     let deltaTime = 0;
-  
-    // let canvas = null;
     let ctx = null;
  
     let requestAnimationFrame = (function() {
@@ -44,6 +62,74 @@ Page({
       }
     })();
     init();
+
+    function errOccur(msg) {
+      console.error(msg);
+    }
+
+    function getFileIdByName(arr, name) {
+      let fileId = NOT_FOUND;
+      arr.forEach(function(item, index) {
+        if (item.name == name) {
+          fileId = item.fileID;
+          arr.splice(index, 1);
+          return;
+        }
+      })
+      if (fileId === NOT_FOUND) {
+        errOccur(NOT_FOUND);
+      }
+      
+      return fileId;
+    }
+
+    function loadImgData(dataArr, type) {
+      switch(type) {
+        case 'icon':
+          homeObj.setData({
+            icon48MusicRed: getFileIdByName(dataArr, 'icon48MusicRed'),
+            iconPointGesture: getFileIdByName(dataArr, 'iconPointGesture'),
+            whiteSnowflake: getFileIdByName(dataArr, 'whiteSnowflake'),
+          })
+          break;
+        case 'text':
+          homeObj.setData({
+            unpackCardText: getFileIdByName(dataArr, 'unpackCardText'),
+          })
+          break;
+        case 'pic':
+          homeObj.setData({
+            homePageXmas: getFileIdByName(dataArr, 'homePageXmas'),
+          })
+          break;
+        default:
+          errOccur(NOT_FOUND);
+      }
+    }
+
+    function initImgData() {
+      db.collection('wallpaper').where({
+        apply: true
+      }).get().then(res=>{
+        loadImgData(res.data, 'pic');
+      }).catch(err=>{
+        errOccur(err);
+      });
+      db.collection('text').where({
+        apply: true
+      }).get().then(res=>{
+        loadImgData(res.data, 'text');
+      }).catch(err=>{
+        errOccur(err);
+      });
+      db.collection('img_icons').where({
+        apply: true
+      }).get().then(res=>{
+        loadImgData(res.data, 'icon');
+      }).catch(err=>{
+        errOccur(err);
+      });
+    }
 
     function init() {
       createCanvas();
@@ -124,7 +210,7 @@ Page({
   },
   onShow: function () {
     var showAnima = wx.createAnimation({
-      duration: 5000,
+      duration: 6000,
       timingFunction: "ease",
       delay: 0,
       transformOrigin: '50% 50% 0'
@@ -150,23 +236,23 @@ Page({
     this.setData({
       animation: this.animation.export()
     })
-},
+  },
   toWish:function(event) {
     wx.navigateTo({
-      url: '/pages/index/index',
+      url: '/pages/wish/wish',
     })
   },
   onReady: function(){
     const innerAudioContext = wx.createInnerAudioContext()
     innerAudioContext.autoplay = true
-    innerAudioContext.src = '/music/hap-birth.mp3'
+    innerAudioContext.src = 'cloud://yq-mini-app-env-5grnxcah9f3142ba.7971-yq-mini-app-env-5grnxcah9f3142ba-1302525386/music/JingleBellsPiano.mp3'
     innerAudioContext.loop = true;
     innerAudioContext.onPlay(() => {
-      console.log('开始播放')
+      wx.hideLoading();
     })
     innerAudioContext.onError((res) => {
-      console.log(res.errMsg)
-      console.log(res.errCode)
+      errOccur(res.errMsg);
+      errOccur(res.errCode);
     })
     var n = 0,
     that = this;

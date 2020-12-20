@@ -1,8 +1,10 @@
 
 <view animation="{{animationData}}" class="card-container">
-<image src='/img/111.jpg' class="animationSlow"></image>
-  <view class="card" style=" left:{{left1}}rpx; top:{{top1}}rpx; z-index:{{isFirstCard?2:1}}; opacity:{{isFirstCard?1:0}};background-image: url({{location1}});" bindtouchstart="viewTouchInside" bindtouchmove="viewDidMove" bindtouchend="viewTouchUpDownInside" animation="{{animation1}}">
+<image src='/img/cardBackground.jpg' class="animationSlow"></image>
+  <view class="card" style=" left:{{left1}}rpx; top:{{top1}}rpx; z-index:{{isFirstCard?2:1}}; opacity:{{isFirstCard?1:0}};"bindtouchstart="viewTouchInside" bindtouchmove="viewDidMove" bindtouchend="viewTouchUpDownInside" animation="{{animation1}}">
+  <image class='backgroundImgs' src="{{location1}}"></image>
   </view>
-  <view class="card" style="left:{{left2}}rpx; top:{{top2}}rpx; z-index:{{isFirstCard?1:2}}; opacity:{{isFirstCard?0:1}};background-image: url({{location2}});background-repeat:no-repeat;background-size:100% 100%;-moz-background-size:100% 100%;" bindtouchstart="viewTouchInside" bindtouchmove="viewDidMove" bindtouchend="viewTouchUpDownInside" animation="{{animation2}}">
+  <view class="card" style="left:{{left2}}rpx; top:{{top2}}rpx; z-index:{{isFirstCard?1:2}}; opacity:{{isFirstCard?0:1}};"bindtouchstart="viewTouchInside" bindtouchmove="viewDidMove" bindtouchend="viewTouchUpDownInside" animation="{{animation2}}">
+  <image class='backgroundImgs' src="{{location2}}"></image>
   </view>
 </view>
