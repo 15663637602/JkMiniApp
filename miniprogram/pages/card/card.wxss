@@ -80,15 +80,15 @@ page {
 
 .animationSlow {
   /* 动画区 */
-  margin-top: -5555rpx; /* 高度的-1/2 或 者高一点 */
-  width: 10000rpx; /* 彩色背景大小 可自定义 */
-  height: 10000rpx; /* 彩色背景大小 可自定义 */
+  margin-top: -5555rpx; /* 高度的-1/2 或 者高一点 */
+  width: 10000rpx; /* 彩色背景大小 可自定义 */
+  height: 10000rpx; /* 彩色背景大小 可自定义 */
   animation-name: myfirst;
   animation-duration: 2000s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   -webkit-animation-name: myfirst;
-  -webkit-animation-duration: 8000ms; /* 速度 */
+  -webkit-animation-duration: 20s; /* 速度 */
   -webkit-animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
   position: fixed;
